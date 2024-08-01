@@ -111,7 +111,7 @@ if (health !== null) {
 }
 // this is the DB part *************
 
-async function addScoreToFirestore() {
+export async function addScoreToFirestore() {
     try {
         onAuthStateChanged(auth, async (user) => {
             if (user) {

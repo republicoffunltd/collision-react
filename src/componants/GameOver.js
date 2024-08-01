@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 // import "./styles/style.css";
-import { userSignOut } from "./auth";
+import { userSignOut, addScoreToFirestore } from "./auth";
 
 
 export default function GameOver() {
 
 //pulling the score data from the game page *********
 useEffect(() => {
-if (window.location.href.includes("/over")) {
+if (window.location.href.includes("/over", {addScoreToFirestore})) {
     
         const result = localStorage.getItem('score');
         const resultElement = document.getElementById('result');

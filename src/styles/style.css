@@ -1,0 +1,339 @@
+
+/* #app { width: 100%; height: 100vh; } */
+@font-face {
+    font-family: 'Fujimaru-Regular';
+    src: url('../../public/fonts/Fujimaru-Regular.ttf'), format('truetype');
+}
+.App {
+    text-align: center;
+  }
+  .playGame{
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    color: rgb(121, 2, 87);
+    position: relative;
+    top: 75px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display:block;
+  }
+  .signin{
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    color: rgb(121, 2, 87);
+    position: relative;
+    top: 75px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display:block;
+  } 
+
+  .gameover{
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    color: rgb(121, 2, 87);
+    position: relative;
+    top: 75px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display:block;
+  }
+
+/* Body styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    height: 100vh;
+    background-color: #edece0; /* Light gray background */
+    color: #0c0c0c; /* Dark gray text */
+}
+.HUD {
+    position: absolute;
+    top: 2.5%;
+    margin-left: auto;
+    left: 10%;
+    color: rgb(0, 0, 0);
+    font-size: 36px;
+    font-family: 'Fujimaru-Regular';
+    text-align: center;
+    font-style: bold;
+}
+.score {
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    margin-left: auto;
+    left: 10%;
+    color: rgb(254, 0, 64);
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    
+    text-align: center;
+    font-style: bold;
+}
+.time {
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    margin-left: auto;
+    left: 35%;
+    color: rgb(20, 167, 216);
+    
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+}
+.health {
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    margin-left: auto;
+    right: 18%;
+    color: rgb(62, 165, 37);
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    text-align: center;
+    font-style: bold;
+}
+.health-bar {
+    z-index: 100;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    padding: 0.5%;
+    background: #dddddd00;
+    -webkit-border-radius: 2.5%;
+    -moz-border-radius: 2.5%;
+    border-radius: 2px;
+    position: absolute;
+    top: 12%;
+    right: 15%;
+  }
+  .bar {
+    z-index: 100;
+    background: rgb(62, 165, 37);
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+    position: relative;
+    transition: width .5s linear;
+  }
+  .hitCounter { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    color: white; 
+ }
+ .button {
+    position: absolute;
+    bottom: 12.5%;
+    margin-left: auto;
+    right:0%;
+    color: rgb(255, 0, 89);
+    background-color: rgb(126, 194, 217);
+    outline: none;
+    border: none;
+    /* bottom: auto !important; */
+    left: 600px;
+    right: auto !important;
+    
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    text-align: left;
+    font-style: bold;
+ }
+    .button:hover {
+        background-color: rgb(20, 167, 216);
+        color: rgb(255, 0, 89);
+    }
+    .button:active {
+        background-color: rgb(126, 217, 170);
+        color: rgb(255, 0, 89);
+    }
+
+    .GO-info {
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        display:block;
+    }
+
+    .GO-info-h1 {
+        position: relative;
+        align-items: center;
+
+        top: -100px;
+        width: 120%;
+        text-align: center;
+        font-size: 48px;
+        font-family: 'Fujimaru-Regular';
+        color: rgb(255, 0, 81);
+    }
+
+    .GO-info p {
+        font-size: 24px;
+        font-family: 'Fujimaru-Regular';
+        color: rgb(0, 0, 0);
+    }
+
+    .buttonPA {
+        font-size: 24px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        /* left: auto !important; */
+        align-self: center;
+        left: 80px;
+        /* right: auto !important; */
+        align-self: center;
+        position: relative;
+        color: rgb(255, 0, 89);
+        /* background-color: rgb(153, 212, 232); */
+        border: none;
+    }
+    .buttonPA:hover {
+        color: rgb(191, 255, 0);
+        background-color: rgb(138, 215, 241);
+        
+    }
+    .buttonPA:active {
+        background-color: rgb(126, 217, 170);
+        color: rgb(255, 0, 89);
+    }
+
+    .z2 {
+        align-items: center;
+        font-size: 24px;
+        font-family: 'Fujimaru-Regular';
+        color: rgb(121, 2, 87);
+        position: relative;
+        top: 75px;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        display:block;
+    }
+
+    .h2 {
+        font-size: 48px;
+        font-family: 'Fujimaru-Regular';
+        color: rgb(0, 0, 0);
+    }
+    .p{
+        font-size: 18px;
+        font-family: 'Fujimaru-Regular';
+        color: rgb(0, 0, 0);
+    }
+
+    .result {
+        font-size: 24px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        align-self: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 100;
+        
+        color: rgb(33, 33, 33);
+        text-align: center;
+        font-style: bold;
+    }
+
+    .energystat {
+        font-size: 24px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        align-self: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 100;
+        
+        color: rgb(33, 33, 33);
+        text-align: center;
+        font-style: bold;
+    }
+
+    .signUpButton {
+        font-size: 18px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        align-self: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 100;
+        color: rgb(33, 33, 33);
+        text-align: center;
+        /* font-style: bold; */
+    }
+    #signOutBtn {
+        font-size: 18px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        align-self: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 100;
+        color: rgb(33, 33, 33);
+        text-align: center;
+        /* font-style: bold; */
+    }
+
+    #authForm{
+        font-size: 18px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        align-self: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 100;
+        color: rgb(33, 33, 33);
+        text-align: center;
+        /* font-style: bold; */
+    }
+
+    .authForm{
+        font-size: 18px;
+        font-family: 'Fujimaru-Regular';
+        bottom: auto !important;
+        align-self: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 100;
+        color: rgb(33, 33, 33);
+        text-align: center;
+        /* font-style: bold; */
+    }
+    .activeStyle{
+        font-weight: bold;
+        color: 'red';
+        
+      };
+        .inactiveStyle{
+            font-weight: normal;
+            color: 'black';
+        };
+        .activeStyle:hover{
+            font-weight: bold;
+            color: 'red';
+        };
+        .inactiveStyle:hover{
+            font-weight: normal;
+            color: 'black';
+        };
+        .isActive{
+            font-weight: bold;
+            color: 'red';
+        };

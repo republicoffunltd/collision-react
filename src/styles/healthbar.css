@@ -1,0 +1,114 @@
+.health-bar-container {
+    width: 100%;
+    background-color: #ddd;
+    border: 1px solid #000;
+    height: 20px;
+    margin-top: 10px;
+  }
+  
+  .health {
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    margin-left: auto;
+    right: 18%;
+    color: rgb(62, 165, 37);
+    font-size: 24px;
+    font-family: 'Fujimaru-Regular';
+    text-align: center;
+    font-style: bold;
+}
+.health-bar {
+    z-index: 100;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    height: 24px;
+    padding: 0.5%;
+    background: #dddddd00;
+    -webkit-border-radius: 2.5%;
+    -moz-border-radius: 2.5%;
+    border-radius: 2px;
+    position: absolute;
+    top: 12%;
+    right: 15%;
+  }
+  .bar {
+    z-index: 100;
+    background: rgb(62, 165, 37);
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+    position: relative;
+    transition: width .5s linear;
+  }
+
+  /* .button {
+    position: absolute;
+    bottom: 12.5%;
+    margin-left: auto;
+    right:0%;
+    color: rgb(255, 0, 89);
+    background-color: rgb(126, 194, 217);
+    outline: none;
+    border: none;
+    left: 600px;
+    right: auto !important;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    font-family: 'Fujimaru-Regular';
+    text-align: left;
+    font-style: bold;
+    }
+    .button:hover {
+        background-color: rgb(20, 167, 216);
+        color: rgb(255, 0, 89);
+    }
+    .button:active {
+        background-color: rgb(126, 217, 170);
+        color: rgb(255, 0, 89);
+    } */
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: left;
+      align-self: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+      margin-bottom: 10px;
+    }
+    
+    .button:hover {background-color: #3e8e41}
+    
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    
+    .health-bar-container {
+      width: 100%;
+      background-color: #ddd;
+      border: 1px solid #000;
+      height: 20px;
+      margin-top: 10px;
+    }
+    
+    .health-bar {
+      height: 100%;
+      background-color: #4caf50; /* Green */
+      width: 100%; /* Default to full width */
+    }
+    

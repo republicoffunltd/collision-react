@@ -6,10 +6,9 @@ import * as THREE from 'three';
 import CollisionDetection from './CollisionDetection';
 import Timer from './Timer';
 import OutOfBoundsCheck from './OutOfBounds';
-import HealthManage from './HealthManage.js';
+// import HealthManage from './HealthManage.js';
 import '../styles/healthbar.css';
-// import { Button } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const ThreeScene = () => {
@@ -17,13 +16,24 @@ const ThreeScene = () => {
   const cube2Ref = useRef();
   const ball1Ref = useRef();
   const [hitCount, setHitCount] = useState(0);
-  // const [health, setHealth] = useState(100);
+  const [health, setHealth] = useState(100);
   const [time, setTime] = useState(30);
   
-  // const handleHealthChange = (newHealth) => {
-  //   setHealth(newHealth);
-  // };
+  
+// HealthManage
+  const reduceHealth = () => {
+    setHealth(prevHealth => Math.max(prevHealth - 5, 0)); // Decrease health by 5, but not below 0
+  };
 
+  useEffect(() => {
+    localStorage.setItem('health', health);
+    setHealth(health);
+  }, [health]);
+
+  if (health === 0) {
+    console.log('Game Over');
+    window.location.href = '/over';
+  }
 
   // Animation loop
   // useFrame(() => {
@@ -71,7 +81,22 @@ const ThreeScene = () => {
   }, []);
   
   return (
+    
     <>
+          {/* //Timer */}
+    <div class="time" id="countdown">Time:{time}</div>
+    {/* //Score  */}
+    <div class="score" id="score">Score: {hitCount} </div>
+    {/* //Health */}
+    <div className="health" id="health">Health: {health}</div>
+    <div className="health-bar-container">
+      <div className="health-bar-background"></div>
+      <div className="health-bar-foreground" style={{ width: `${health}%` }}></div>
+    </div>
+    <button className="button" onClick={reduceHealth}>Health-Stat</button>
+    
+
+
     <Canvas>
       <ambientLight intensity={1} castShadow/>
       <pointLight position={[10, 10, 10]} />
@@ -98,16 +123,13 @@ const ThreeScene = () => {
         <circleGeometry args={[3, 16]} />
         <meshBasicMaterial color="#606f60" side={THREE.DoubleSide} />
       </mesh>
-      <Timer  initialTime={10} getTime={setTime}/>
+      <Timer  initialTime={60} getTime={setTime}/>
       <CollisionDetection cube1Ref={cube1Ref} cube2Ref={cube2Ref} onHitCountChange={setHitCount} />;
       <OutOfBoundsCheck cube2Ref={cube2Ref} circleBoundsRef={ball1Ref} circleBoundsRadius={3} />;
       
     </Canvas>
-    {/* //Timer */}
-    <div class="time" id="countdown">Time:{time}</div>
-    {/* //Score  */}
-    <div class="score" id="score">Score: {hitCount} </div>
-    <HealthManage />
+
+      
 
     </>
     

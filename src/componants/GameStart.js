@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import auth from "./auth";
 
 export default function GameStart() {
@@ -12,7 +12,7 @@ export default function GameStart() {
           <Link to="/signin" class="buttonPA" id="buttonPA">Sign in to play</Link>
           {/* <a href="SignIn.js" class="buttonPA" id="buttonPA">Sign in to play</a> */}
           <p class="p">Or</p>
-          <NavLink to="/play" class="buttonPA" id="buttonPA">Play as Guest</NavLink>
+          <Link to="/play" class="buttonPA" id="buttonPA">Play as Guest</Link>
           {/* <a href="./play" class="buttonPA" id="buttonPA">Play as Guest</a> */}
           
       </h1>

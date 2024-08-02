@@ -1,13 +1,8 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { userSignUp, userSignIn } from './auth'; // Adjust the path as needed
 
-
-import React, { useState} from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { userSignUp } from "./auth";
-import { userSignIn } from "./auth";
-
-
-export  function SignIn() {
-
+export function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -42,12 +37,8 @@ export  function SignIn() {
     }
   };
 
-
-
-
   return (
-    <>
-         <div className="signin">
+    <div className="signin">
       <div className="GO-info-h1" id="GO-info">Collisions Detect</div>
       <div id="authForm"></div>
       <h2 className="p">Sign Up or Sign In</h2>
@@ -70,18 +61,8 @@ export  function SignIn() {
       <p></p>
       <button className="buttonPA" id="buttonPA" onClick={handleSignIn}>Sign In</button>
       
-      <div className="body">
-        <h3 className="p">This is top secret information that you can only see if</h3>
-        <h1 className="p">AUTHENTICATED</h1>
-        <Link to="/" className="buttonPA" id="buttonPA">Sign Out</Link>
-      </div>  
+      {/* ... rest of your component ... */}
     </div>  
-
-    </>
-  )
+  );
 }
 export default SignIn;
-
-
-
-

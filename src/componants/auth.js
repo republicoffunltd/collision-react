@@ -10,6 +10,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 import {getFirestore, doc, collection, addDoc, setDoc, query, getDocs, orderBy, limit, serverTimestamp}
         from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { pass } from "three/webgpu";
+
+// import { auth } from "./firebase.js";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -21,6 +24,8 @@ messagingSenderId: "641503615143",
 appId: "1:641503615143:web:ed8208b04a28edb40da382",
 measurementId: "G-BNC91K2VFJ"
 };
+
+// import { auth } from "./firebase.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -36,38 +41,37 @@ const signOutButton = document.querySelector("#signOutButton");
 
 
 // this is the AUTH part *************
-export const userSignUp = async() => {
-    const signUpEmail = userEmail.value;
-    const signUpPassword = userPassword.value;
-    createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-    .then((userCredential) => {
+export const userSignUp = async(email, password) => {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         console.log(user);
         alert("Your account has been created!");
-        window.location.href = "/play";
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode + errorMessage)
-    })
-}
+        return true;
+    } catch (error) {
+        console.error('Sign up error:', error);
+        return false;
+    }
 
-export const userSignIn = async() => {
-    const signInEmail = userEmail.value;
-    const signInPassword = userPassword.value;
-    signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-    .then((userCredential) => {
-        const user = userCredential.user;
-        // alert("You have signed in successfully!");
-        window.location.href = "/play";
-        
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode + errorMessage)
-    })
+};
+ 
+
+export const userSignIn = async(email, password) => {
+    try{
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    console.log(user);
+    // alert("You have signed in successfully!");
+    // .then((userCredential) => {
+    //     const user = userCredential.user;
+    //     // alert("You have signed in successfully!");
+    //     window.location.href = "/play";
+    return true;
+    } 
+    catch(error) {
+        console.error('Sign in error:', error);
+        return false;
+    }
 }
 
 const checkAuthState = async() => {

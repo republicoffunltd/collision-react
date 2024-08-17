@@ -74,4 +74,28 @@
       border-radius: 10px;
 
     }
+
+    .clock{
+      position: absolute;
+      color:aqua;
+      text-shadow:black; 
+      position: absolute;
+      /* top: 0 ;
+      left: 0 ;
+      right: 0 ;
+      bottom: 0 ; */
+      
+      flex: flex-col ;
+      pointer-events: none;
+      
+      z-index: 100;
+      top: 5%;
+      margin-left: auto;
+      left: 35%;
+      color: rgb(20, 167, 216);
+      font-size: 48px;
+      font-family: 'Fujimaru-Regular';
+      text-align: center;
+      font-style: bold;
+    }
     

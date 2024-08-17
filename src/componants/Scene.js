@@ -84,8 +84,14 @@ const ThreeScene = () => {
     
     <>
           {/* //Timer */}
-    <div class="time" id="countdown">Time:{time}</div>
+      <div class="time" id="countdown">
+      {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /> */}
+  <svg height="64" viewBox="0 0 64 64" width="64" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle cx="32" cy="36" fill="#d8d8d8" r="27"/><path d="m28 6h8v4h-8z" fill="#979797"/><rect fill="#d8d8d8" height="3" rx="1.5" width="12" x="26" y="3"/><rect fill="#979797" height="3" rx="1.5" transform="matrix(.8660254 .5 -.5 .8660254 12.20706 -22.959292)" width="12" x="42.946152" y="9.799038"/><circle cx="32" cy="36" fill="#80d25b" r="22"/><path d="m32 18c9.993724 0 18.0952381 8.1015141 18.0952381 18.0952381 0 .3033891-.0074664.6050343-.0222255.9047619h-18.0730126z" fill="#9c4d4d"/></g></svg>
+ {time}
+    </div> 
     {/* //Score  */}
+    
     <div class="score" id="score">Score: {hitCount} </div>
     {/* //Health */}
     <div className="health" id="health">Health: {health}</div>

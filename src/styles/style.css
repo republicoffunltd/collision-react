@@ -1,9 +1,17 @@
 
+
+
+
 /* #app { width: 100%; height: 100vh; } */
 @font-face {
     font-family: 'Fujimaru-Regular';
     src: url('../../public/fonts/Fujimaru-Regular.ttf'), format('truetype');
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
     text-align: center;
   }
@@ -85,12 +93,24 @@ body {
     z-index: 100;
     top: 5%;
     margin-left: auto;
-    left: 35%;
+    left: 40%;
     color: rgb(20, 167, 216);
     
     font-size: 24px;
     font-family: 'Fujimaru-Regular';
 }
+/* .clock{
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    margin-left: auto;
+    left: 35%;
+    color: rgb(20, 167, 216);
+    font-size: 48px;
+    font-family: 'Fujimaru-Regular';
+    text-align: center;
+    font-style: bold;
+} */
 .health {
     position: absolute;
     z-index: 100;

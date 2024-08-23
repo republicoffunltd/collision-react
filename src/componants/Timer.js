@@ -1,7 +1,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 
-const Timer = ({ initialTime = 30, getTime}) => {
+const Timer = ({ initialTime = 10, getTime}) => {
     const [countDown, setCountDown] = useState(initialTime);
     const endTimeRef = useRef(Date.now() + initialTime * 1000);
   
@@ -13,7 +13,7 @@ const Timer = ({ initialTime = 30, getTime}) => {
           // Handle game over logic here
           return;
         }
-        setCountDown(Math.floor((remaining % (1000 * 60)) / 1000));
+        setCountDown(Math.floor((remaining % (1000 * initialTime)) / 1000));
       };
   
       const timerId = setInterval(updateTime, 1000);

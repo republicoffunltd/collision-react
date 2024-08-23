@@ -129,7 +129,7 @@ const ThreeScene = () => {
         <circleGeometry args={[3, 16]} />
         <meshBasicMaterial color="#606f60" side={THREE.DoubleSide} />
       </mesh>
-      <Timer  initialTime={60} getTime={setTime}/>
+      <Timer   getTime={setTime}/>
       <CollisionDetection cube1Ref={cube1Ref} cube2Ref={cube2Ref} onHitCountChange={setHitCount} />;
       <OutOfBoundsCheck cube2Ref={cube2Ref} circleBoundsRef={ball1Ref} circleBoundsRadius={3} />;
       
